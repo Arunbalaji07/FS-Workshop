@@ -1,0 +1,12 @@
+-- CreateEnum
+CREATE TYPE "STATUS" AS ENUM ('IN_PROGRESS', 'COMPLETED');
+
+-- CreateTable
+CREATE TABLE "todos" (
+    "id" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "item" TEXT NOT NULL,
+    "status" "STATUS" NOT NULL DEFAULT 'IN_PROGRESS',
+
+    CONSTRAINT "todos_pkey" PRIMARY KEY ("id")
+);
